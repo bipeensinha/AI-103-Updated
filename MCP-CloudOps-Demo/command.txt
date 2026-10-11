@@ -1,0 +1,13 @@
+cd backend
+python -m venv .venv    
+.\.venv\Scripts\Activate.ps1  
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+http://localhost:8000
+
+Try these classroom prompts
+- “Give me a health summary of the whole cloud estate.”
+- “Show me all AKS clusters and their node readiness.”
+- “Why is the inventory API marked critical?”
+- “Check the SQL database with the highest storage usage.”
+- “Which resources should I investigate first?”

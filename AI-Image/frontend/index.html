@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Image Studio | GPT-image-2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- TOP NAV -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">✦</div>
+      <div>
+        <div class="brand-name">AI Image Studio</div>
+        <div class="brand-sub">Create • Imagine • Visualize with GPT-image-2</div>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a class="nav-link active" href="#home">⌂ <span>Home</span></a>
+      <a class="nav-link" href="#generate">✣ <span>Generate</span></a>
+      <a class="nav-link" href="#gallery">▧ <span>Gallery</span></a>
+      <a class="nav-link" href="#pricing">♜ <span>Pricing</span></a>
+      <a class="nav-link" href="#about">ⓘ <span>About</span></a>
+    </nav>
+
+    <div class="developer">
+      <div class="status-model"><span class="online-dot"></span> GPT-image-2 <small>Powered by Microsoft Foundry</small></div>
+      <div class="developer-info">
+        <div class="developer-avatar">BS</div>
+        <div>
+          <div class="tiny-label">DEVELOPED BY</div>
+          <strong>Bipeen Sinha</strong>
+          <span>AI • Cloud • DevOps Trainer</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- APP BODY -->
+  <main id="home" class="workspace">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="tool-title">Create</div>
+      <button class="side-tool active" data-tool="Text to Image">▧ <span>Text to Image</span></button>
+      <button class="side-tool" data-tool="Image Variations">◈ <span>Image Variations</span></button>
+      <button class="side-tool" data-tool="Edit Image">✎ <span>Edit Image</span></button>
+      <button class="side-tool" data-tool="Style Transfer">◌ <span>Style Transfer</span></button>
+      <button class="side-tool" data-tool="Image Upscale">↗ <span>Image Upscale</span></button>
+      <button class="side-tool" data-tool="Remove Background">⌑ <span>Remove Background</span></button>
+      <button class="side-tool" data-tool="Object Replace">◇ <span>Object Replace</span></button>
+      <button class="side-tool" data-tool="Image Outpainting">⤢ <span>Image Outpainting</span></button>
+
+      <div class="credit-card">
+        <div class="credit-heading">✦ <span>Your Credits</span></div>
+        <strong>120 <small>/ 200</small></strong>
+        <div class="credit-bar"><i></i></div>
+        <a href="#pricing">View Plans →</a>
+      </div>
+
+      <div class="upgrade-card">
+        <div class="crown">♛</div>
+        <h3>Upgrade to Pro</h3>
+        <p>Get more credits, faster generation and premium features.</p>
+        <a href="#pricing">View Pricing →</a>
+      </div>
+    </aside>
+
+    <!-- CENTER -->
+    <section class="center-column" id="generate">
+
+      <div class="generator-card">
+        <div class="section-heading">
+          <div class="section-icon">✦</div>
+          <div>
+            <h1>Create Your Image</h1>
+            <p>Describe what you want to see, and let AI bring it to life.</p>
+          </div>
+          <button id="surpriseBtn" class="ghost-btn">✣ Surprise Me</button>
+        </div>
+
+        <label class="field-label">Prompt</label>
+        <div class="prompt-wrap">
+          <textarea id="prompt" maxlength="4000" placeholder="Describe your image...">A futuristic robot chef preparing pasta in a luxury Italian restaurant, cinematic lighting, photorealistic, ultra detailed</textarea>
+          <span id="charCount">0/4000</span>
+        </div>
+
+        <div class="controls">
+          <div>
+            <label class="field-label">Aspect Ratio</label>
+            <select id="size">
+              <option value="1024x1024">1:1 (Square)</option>
+              <option value="1536x1024" selected>16:9 (Landscape)</option>
+              <option value="1024x1536">9:16 (Portrait)</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label">Quality</label>
+            <select id="quality">
+              <option value="auto">Auto</option>
+              <option value="high" selected>High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label">Number of Images</label>
+            <select id="count">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="advancedBtn" class="advanced-btn">⚙ Advanced Settings <span>⌄</span></button>
+        <div id="advancedPanel" class="advanced-panel hidden">
+          <div>
+            <label>Style</label>
+            <select id="style">
+              <option>Photorealistic</option>
+              <option>Cinematic</option>
+              <option>Digital Art</option>
+              <option>Anime</option>
+              <option>3D Render</option>
+            </select>
+          </div>
+          <div>
+            <label>Model</label>
+            <select disabled><option>GPT-image-2</option></select>
+          </div>
+        </div>
+
+        <button id="generateBtn" class="generate-btn">✣ Generate Image</button>
+        <div id="errorBox" class="error-box hidden"></div>
+      </div>
+
+      <!-- PREVIEW -->
+      <div class="preview-card" id="gallery">
+        <div class="preview-top">
+          <div>
+            <h2>Generated Image</h2>
+            <span id="generationStatus">Ready to create</span>
+          </div>
+          <button id="downloadBtn" class="download-btn" disabled>⇩ Download</button>
+        </div>
+
+        <div class="image-stage" id="imageStage">
+          <img id="resultImage" src="generated-preview.png" alt="Generated preview">
+          <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <strong>GPT-image-2 is creating your image...</strong>
+            <span>Turning your prompt into pixels</span>
+          </div>
+          <button class="stage-arrow left">‹</button>
+          <button class="stage-arrow right">›</button>
+        </div>
+
+        <div class="thumb-row" id="thumbRow">
+          <button class="thumb active"><img src="generated-preview.png" alt=""></button>
+          <button class="thumb gradient-thumb t2"></button>
+          <button class="thumb gradient-thumb t3"></button>
+          <button class="thumb gradient-thumb t4"></button>
+          <button class="thumb gradient-thumb t5"></button>
+        </div>
+      </div>
+
+      <!-- INSPIRATION -->
+      <section class="inspiration">
+        <div class="section-heading compact">
+          <div class="section-icon">✦</div>
+          <div>
+            <h2>Prompt Inspiration</h2>
+            <p>Try an example or create your own.</p>
+          </div>
+          <a href="#generate">View All Prompts →</a>
+        </div>
+
+        <div class="prompt-grid">
+          <button class="prompt-card" data-prompt="A beautiful temple in India at sunset, cinematic photography, warm golden light, highly detailed">
+            <div class="prompt-art art1"></div><span>A beautiful temple in India at sunset, cinematic</span> <b>⧉</b>
+          </button>
+          <button class="prompt-card" data-prompt="A modern luxury house with pool, realistic architecture, daylight, premium architectural photography">
+            <div class="prompt-art art2"></div><span>A modern house with pool, realistic architecture</span> <b>⧉</b>
+          </button>
+          <button class="prompt-card" data-prompt="A futuristic city in 2050, ultra detailed, flying vehicles, neon skyline, cinematic">
+            <div class="prompt-art art3"></div><span>A futuristic city in 2050, ultra detailed</span> <b>⧉</b>
+          </button>
+          <button class="prompt-card" data-prompt="A cozy living room interior design, modern style, natural sunlight, luxury furniture">
+            <div class="prompt-art art4"></div><span>A cozy living room interior design, modern style</span> <b>⧉</b>
+          </button>
+          <button class="prompt-card" data-prompt="A golden retriever in a mountain landscape, professional wildlife photography, realistic">
+            <div class="prompt-art art5"></div><span>A golden retriever in a mountain landscape</span> <b>⧉</b>
+          </button>
+          <button class="prompt-card" data-prompt="A luxury sports car on a coastal highway at sunset, cinematic automotive photography">
+            <div class="prompt-art art6"></div><span>A luxury sports car on a coastal highway</span> <b>⧉</b>
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <!-- RIGHT PANEL -->
+    <aside class="right-panel">
+      <div class="panel-card">
+        <div class="panel-title"><span>✦</span> Style Presets</div>
+        <p>Choose a visual style for your image.</p>
+        <div class="style-grid">
+          <button class="style-preset selected"><span class="preset-photo p1"></span>Photorealistic</button>
+          <button class="style-preset"><span class="preset-photo p2"></span>Cinematic</button>
+          <button class="style-preset"><span class="preset-photo p3"></span>Digital Art</button>
+          <button class="style-preset"><span class="preset-photo p4"></span>3D Render</button>
+          <button class="style-preset"><span class="preset-photo p5"></span>Anime</button>
+          <button class="style-preset"><span class="preset-photo p6"></span>Oil Painting</button>
+          <button class="style-preset"><span class="preset-photo p7"></span>Watercolor</button>
+          <button class="style-preset"><span class="preset-photo p8"></span>Sketch</button>
+          <button class="style-preset"><span class="preset-photo p9"></span>Minimal</button>
+        </div>
+
+        <div class="model-block">
+          <div class="panel-title small">Model</div>
+          <p>Powered by Microsoft Foundry</p>
+          <div class="model-select"><span>✦</span> GPT-image-2 <b>⌄</b></div>
+        </div>
+      </div>
+
+      <div class="foundry-card">
+        <div class="foundry-logo">✦</div>
+        <div><strong>Microsoft Foundry</strong><span>Enterprise AI platform</span></div>
+        <span class="foundry-check">✓</span>
+      </div>
+    </aside>
+  </main>
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricing-section">
+    <div class="pricing-header">
+      <div class="eyebrow">PRICING</div>
+      <h2>Choose a Plan That Fits Your Needs</h2>
+      <p>Flexible pricing for individuals, professionals and businesses.</p>
+      <div class="billing-toggle">
+        <button class="billing active" data-period="monthly">Monthly</button>
+        <button class="billing" data-period="yearly">Yearly</button>
+        <span>Save 20%</span>
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      <article class="price-card">
+        <div class="price-icon purple">▣</div>
+        <h3>Free</h3><p>Try it out and explore</p>
+        <div class="price">$0 <small>/ month</small></div>
+        <ul><li>20 credits per month</li><li>Standard image generation</li><li>Basic features</li><li>Community support</li></ul>
+        <button class="price-btn outline" data-plan="Free">Get Started Free</button>
+      </article>
+
+      <article class="price-card popular">
+        <div class="popular-tag">Most Popular</div>
+        <div class="price-icon blue">♛</div>
+        <h3>Pro</h3><p>For creators and professionals</p>
+        <div class="price" data-monthly="$19" data-yearly="$15">$19 <small>/ month</small></div>
+        <ul><li>200 credits per month</li><li>High quality generation</li><li>All style presets</li><li>Image editing tools</li><li>Priority support</li></ul>
+        <button class="price-btn primary" data-plan="Pro">Start Pro</button>
+      </article>
+
+      <article class="price-card">
+        <div class="price-icon green">♟</div>
+        <h3>Team</h3><p>For small teams and businesses</p>
+        <div class="price" data-monthly="$49" data-yearly="$39">$49 <small>/ month</small></div>
+        <ul><li>700 credits per month</li><li>Everything in Pro</li><li>Team collaboration</li><li>Commercial usage</li><li>Priority support</li></ul>
+        <button class="price-btn team" data-plan="Team">Start Team</button>
+      </article>
+
+      <article class="price-card">
+        <div class="price-icon orange">▥</div>
+        <h3>Enterprise</h3><p>For large organizations</p>
+        <div class="price custom">Custom Pricing</div>
+        <ul><li>Custom credit allocation</li><li>All features</li><li>Dedicated support</li><li>SLA & security options</li><li>Onboarding assistance</li></ul>
+        <button class="price-btn enterprise" data-plan="Enterprise">Contact Sales</button>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="about-strip">
+    <strong>AI Image Studio</strong>
+    <span>•</span>
+    <span>Built for creative professionals, teams and AI classrooms.</span>
+    <span class="about-right">GPT-image-2 • Microsoft Foundry • Bipeen Sinha</span>
+  </section>
+
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

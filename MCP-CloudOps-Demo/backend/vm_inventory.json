@@ -1,0 +1,30 @@
+[
+  {
+    "name": "web-server-01",
+    "status": "Running",
+    "region": "Central India",
+    "environment": "Production",
+    "cpu_percent": 34
+  },
+  {
+    "name": "test-server-01",
+    "status": "Stopped",
+    "region": "Central India",
+    "environment": "Testing",
+    "cpu_percent": 0
+  },
+  {
+    "name": "dev-server-01",
+    "status": "Running",
+    "region": "East US",
+    "environment": "Development",
+    "cpu_percent": 12
+  },
+  {
+    "name": "batch-server-01",
+    "status": "Stopped",
+    "region": "East US",
+    "environment": "Testing",
+    "cpu_percent": 0
+  }
+]

@@ -1,0 +1,11 @@
+
+cd Vision-AI-Studio\backend
+python -m venv venv   
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\venv\Scripts\Activate.ps1    
+pip install fastapi uvicorn python-multipart openai python-dotenv
+
+
+uvicorn main:app --reload
+
+http://localhost:8000

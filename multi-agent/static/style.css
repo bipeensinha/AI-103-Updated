@@ -1,0 +1,1462 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #f5f7ff;
+
+    background:
+        radial-gradient(
+            circle at 70% 20%,
+            #0b2858 0%,
+            #061a3d 30%,
+            #020d22 70%
+        );
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 15px 30px;
+
+    border-bottom:
+        1px solid rgba(
+            50,
+            140,
+            255,
+            0.25
+        );
+
+    background:
+        linear-gradient(
+            90deg,
+            #020d22,
+            #061a3d,
+            #03132f
+        );
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.logo-container {
+
+    width: 150px;
+
+    height: 115px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.main-logo {
+
+    width: 145px;
+
+    max-height: 110px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(0, 150, 255, 0.45)
+        );
+
+}
+
+
+.brand-text {
+
+    min-width: 430px;
+
+}
+
+
+.enterprise-title {
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    color: #ffffff;
+
+}
+
+
+.brand h1 {
+
+    margin: 0;
+
+    font-size: 40px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    line-height: 1;
+
+}
+
+
+.brand h1 span {
+
+    color: #1da1ff;
+
+}
+
+
+.brand-text p {
+
+    margin: 8px 0 0;
+
+    color: #70b8ff;
+
+    font-size: 17px;
+
+}
+
+
+/* =========================================================
+   DEVELOPER PROFILE
+========================================================= */
+
+.developer-profile {
+
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-right: 25px;
+
+}
+
+
+.developer-photo-wrapper {
+
+    width: 92px;
+
+    height: 92px;
+
+    border-radius: 50%;
+
+    padding: 3px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #0066ff,
+            #7c3cff
+        );
+
+    box-shadow:
+        0 0 22px
+        rgba(0, 180, 255, 0.5);
+
+}
+
+
+.developer-photo {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+
+}
+
+
+.developer-info h2 {
+
+    margin: 0;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+}
+
+
+.developer-role {
+
+    margin: 5px 0;
+
+    font-size: 16px;
+
+    color: #dcecff;
+
+}
+
+
+.developer-experience {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #74c8ff;
+
+    font-weight: 600;
+
+}
+
+
+.linkedin-badge {
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 6px;
+
+    background: #0877c9;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 800;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 0 12px
+        rgba(0, 120, 255, 0.35);
+
+}
+
+
+/* =========================================================
+   SYSTEM STATUS
+========================================================= */
+
+.system-status {
+
+    position: absolute;
+
+    right: 25px;
+
+    bottom: -28px;
+
+    z-index: 5;
+
+    padding: 10px 18px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(0, 50, 40, 0.85);
+
+    border:
+        1px solid
+        rgba(0, 255, 160, 0.25);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+}
+
+
+.status-dot {
+
+    display: inline-block;
+
+    width: 11px;
+
+    height: 11px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: #00ef8b;
+
+    box-shadow:
+        0 0 10px
+        rgba(0, 255, 140, 0.8);
+
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.main-container {
+
+    display: flex;
+
+    min-height:
+        calc(100vh - 150px);
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+
+    width: 200px;
+
+    padding: 20px 10px;
+
+    background:
+        rgba(2, 18, 44, 0.9);
+
+    border-right:
+        1px solid
+        rgba(50, 140, 255, 0.2);
+
+}
+
+
+.nav-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px 15px;
+
+    margin-bottom: 7px;
+
+    border-radius: 10px;
+
+    color: #d9e8ff;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+}
+
+
+.nav-item:hover {
+
+    background:
+        rgba(20, 100, 220, 0.18);
+
+}
+
+
+.nav-item.active {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 100, 220, 0.5),
+            rgba(15, 80, 180, 0.15)
+        );
+
+    box-shadow:
+        inset 3px 0 0 #1ba5ff;
+
+}
+
+
+.nav-icon {
+
+    width: 28px;
+
+    font-size: 20px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   AI POWERED CARD
+========================================================= */
+
+.ai-powered-card {
+
+    margin-top: 45px;
+
+    padding: 16px 12px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(0, 150, 255, 0.3);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0, 80, 180, 0.25),
+            rgba(2, 20, 55, 0.7)
+        );
+
+    text-align: center;
+
+}
+
+
+.ai-small-icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: auto auto 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #0caaff,
+            #07347c
+        );
+
+    box-shadow:
+        0 0 22px
+        rgba(0, 170, 255, 0.6);
+
+    font-weight: 900;
+
+    font-size: 19px;
+
+}
+
+
+.ai-powered-card strong {
+
+    color: #00baff;
+
+}
+
+
+.ai-powered-card p {
+
+    margin: 5px 0;
+
+    font-size: 11px;
+
+    color: #d8eaff;
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content-area {
+
+    flex: 1;
+
+    padding: 22px 25px;
+
+    max-width: 1600px;
+
+    margin: auto;
+
+}
+
+
+/* =========================================================
+   REQUEST CARD
+========================================================= */
+
+.request-card {
+
+    padding: 20px 24px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid
+        rgba(0, 150, 255, 0.4);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 36, 79, 0.85),
+            rgba(2, 19, 48, 0.95)
+        );
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+.request-card h2 {
+
+    margin: 0 0 15px;
+
+    font-size: 20px;
+
+}
+
+
+.input-row {
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+
+textarea {
+
+    flex: 1;
+
+    min-height: 62px;
+
+    resize: none;
+
+    padding: 17px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        rgba(100, 160, 220, 0.35);
+
+    outline: none;
+
+    color: white;
+
+    background:
+        rgba(1, 13, 35, 0.8);
+
+    font-size: 15px;
+
+}
+
+
+textarea::placeholder {
+
+    color: #91a6c4;
+
+}
+
+
+textarea:focus {
+
+    border-color: #159fff;
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 150, 255, 0.15);
+
+}
+
+
+.submit-button {
+
+    min-width: 145px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #009dff,
+            #1558ff
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 18px
+        rgba(0, 130, 255, 0.35);
+
+}
+
+
+.submit-button:hover {
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 0 25px
+        rgba(0, 160, 255, 0.55);
+
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.dashboard-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(600px, 1fr)
+        430px;
+
+    gap: 20px;
+
+    margin-top: 18px;
+
+}
+
+
+/* =========================================================
+   WORKFLOW CARD
+========================================================= */
+
+.workflow-card {
+
+    min-height: 650px;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid
+        rgba(0, 150, 255, 0.35);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(5, 29, 65, 0.95),
+            rgba(2, 16, 38, 0.95)
+        );
+
+}
+
+
+.section-title {
+
+    margin: 0 0 28px;
+
+    font-size: 21px;
+
+}
+
+
+.section-icon {
+
+    color: #1bb7ff;
+
+    margin-right: 8px;
+
+}
+
+
+/* =========================================================
+   AGENTS
+========================================================= */
+
+.agent {
+
+    border-radius: 14px;
+
+    border: 1px solid
+        rgba(100, 160, 220, 0.25);
+
+    background:
+        rgba(4, 23, 53, 0.8);
+
+    transition: 0.3s;
+
+}
+
+
+.orchestrator {
+
+    width: 55%;
+
+    margin: auto;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-color:
+        rgba(160, 90, 255, 0.8);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(76, 38, 160, 0.28),
+            rgba(15, 20, 65, 0.8)
+        );
+
+}
+
+
+.agent-image {
+
+    width: 60px;
+
+    height: 60px;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+}
+
+
+.purple {
+
+    background:
+        radial-gradient(
+            circle,
+            #8d50ff,
+            #3d197b
+        );
+
+}
+
+
+.green {
+
+    background:
+        radial-gradient(
+            circle,
+            #16e99b,
+            #075e49
+        );
+
+}
+
+
+.blue {
+
+    background:
+        radial-gradient(
+            circle,
+            #18baff,
+            #064b91
+        );
+
+}
+
+
+.orange {
+
+    background:
+        radial-gradient(
+            circle,
+            #ffad2e,
+            #8d4600
+        );
+
+}
+
+
+.pink {
+
+    background:
+        radial-gradient(
+            circle,
+            #ff4fa7,
+            #8d1c5c
+        );
+
+}
+
+
+.agent-info {
+
+    flex: 1;
+
+}
+
+
+.agent-info h3 {
+
+    margin: 0 0 5px;
+
+    font-size: 17px;
+
+}
+
+
+.agent-info p {
+
+    margin: 0;
+
+    color: #8faed1;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   SPECIALISTS
+========================================================= */
+
+.specialists {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.specialist {
+
+    padding: 20px 15px;
+
+    text-align: center;
+
+}
+
+
+.specialist .agent-image {
+
+    margin: auto auto 12px;
+
+}
+
+
+.specialist h3 {
+
+    margin: 0 0 6px;
+
+    font-size: 16px;
+
+}
+
+
+.specialist p {
+
+    margin: 0 0 15px;
+
+    color: #8da8c9;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   RESOLUTION
+========================================================= */
+
+.resolution {
+
+    width: 55%;
+
+    margin: auto;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-color:
+        rgba(255, 50, 155, 0.7);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(130, 20, 90, 0.25),
+            rgba(30, 15, 55, 0.8)
+        );
+
+}
+
+
+.workflow-arrow {
+
+    text-align: center;
+
+    font-size: 28px;
+
+    color: #22c8ff;
+
+    margin: 10px;
+
+    text-shadow:
+        0 0 12px
+        rgba(0, 200, 255, 0.7);
+
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badge {
+
+    padding: 5px 11px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+.waiting {
+
+    background:
+        rgba(130, 145, 170, 0.25);
+
+    color: #d3dce9;
+
+}
+
+
+.running {
+
+    background:
+        rgba(255, 180, 0, 0.2);
+
+    color: #ffc44d;
+
+    box-shadow:
+        0 0 12px
+        rgba(255, 180, 0, 0.2);
+
+}
+
+
+.completed {
+
+    background:
+        rgba(0, 230, 130, 0.2);
+
+    color: #43f5aa;
+
+    box-shadow:
+        0 0 12px
+        rgba(0, 230, 130, 0.15);
+
+}
+
+
+/* =========================================================
+   RIGHT PANEL
+========================================================= */
+
+.right-panel {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+
+.side-card {
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid
+        rgba(0, 140, 255, 0.3);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(5, 30, 66, 0.9),
+            rgba(2, 17, 39, 0.95)
+        );
+
+}
+
+
+.side-card h2 {
+
+    margin: 0 0 17px;
+
+    font-size: 19px;
+
+}
+
+
+.side-card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.live-status {
+
+    color: #d9e8ff;
+
+    font-size: 13px;
+
+}
+
+
+.live-status::first-letter {
+
+    color: #00f28a;
+
+}
+
+
+/* =========================================================
+   ACTIVITY
+========================================================= */
+
+.activity-item {
+
+    display: flex;
+
+    gap: 12px;
+
+    padding: 11px 0;
+
+    border-bottom:
+        1px solid
+        rgba(100, 150, 220, 0.12);
+
+}
+
+
+.activity-item:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.activity-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.purple-icon {
+
+    background:
+        rgba(130, 70, 255, 0.25);
+
+}
+
+
+.blue-icon {
+
+    background:
+        rgba(0, 150, 255, 0.25);
+
+}
+
+
+.activity-item strong {
+
+    font-size: 14px;
+
+}
+
+
+.activity-item p {
+
+    margin: 4px 0 0;
+
+    color: #9bb0cc;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================================
+   MEMORY
+========================================================= */
+
+.memory-item {
+
+    display: flex;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    margin-bottom: 9px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(5, 30, 65, 0.75);
+
+    border:
+        1px solid
+        rgba(70, 130, 200, 0.15);
+
+}
+
+
+.memory-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.blue-memory {
+
+    background:
+        rgba(0, 130, 255, 0.25);
+
+}
+
+
+.purple-memory {
+
+    background:
+        rgba(140, 70, 255, 0.25);
+
+}
+
+
+.green-memory {
+
+    background:
+        rgba(0, 220, 120, 0.2);
+
+}
+
+
+.memory-item strong {
+
+    font-size: 13px;
+
+}
+
+
+.memory-item p {
+
+    margin: 5px 0 0;
+
+    color: #8fa6c4;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    max-width: 280px;
+
+}
+
+
+/* =========================================================
+   FINAL RESOLUTION
+========================================================= */
+
+.final-card {
+
+    border-color:
+        rgba(255, 40, 160, 0.45);
+
+}
+
+
+.final-card h2 {
+
+    color: #ff54b2;
+
+}
+
+
+#final-answer {
+
+    padding: 18px;
+
+    min-height: 100px;
+
+    border-radius: 10px;
+
+    border:
+        1px dashed
+        rgba(255, 50, 160, 0.55);
+
+    background:
+        rgba(70, 10, 55, 0.18);
+
+    color: #cbd9ec;
+
+    line-height: 1.6;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   AGENT RUNNING ANIMATION
+========================================================= */
+
+.active-agent {
+
+    animation:
+        agentPulse 1.5s infinite;
+
+}
+
+
+@keyframes agentPulse {
+
+    0% {
+
+        box-shadow:
+            0 0 0
+            rgba(0, 180, 255, 0);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 25px
+            rgba(0, 180, 255, 0.35);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0
+            rgba(0, 180, 255, 0);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width: 1200px) {
+
+    .developer-profile {
+
+        display: none;
+
+    }
+
+    .dashboard-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .right-panel {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media(max-width: 800px) {
+
+    .sidebar {
+
+        display: none;
+
+    }
+
+    .brand-text {
+
+        min-width: 0;
+
+    }
+
+    .brand h1 {
+
+        font-size: 26px;
+
+    }
+
+    .logo-container {
+
+        width: 90px;
+
+    }
+
+    .main-logo {
+
+        width: 85px;
+
+    }
+
+    .specialists {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .orchestrator,
+    .resolution {
+
+        width: 100%;
+
+    }
+
+    .right-panel {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

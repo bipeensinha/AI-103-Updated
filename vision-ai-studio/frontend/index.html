@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Vision AI Studio | GPT-5.1</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP NAVIGATION
+====================================================== -->
+
+<header class="topbar">
+
+    <!-- BRAND -->
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            ✦
+        </div>
+
+        <div class="brand-content">
+
+            <div class="brand-name">
+                Vision AI Studio
+            </div>
+
+            <div class="brand-tagline">
+                Multimodal AI • Powered by GPT-5.1
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOP RIGHT -->
+
+    <div class="top-right">
+
+
+        <!-- MODEL STATUS -->
+
+        <div class="model-badge">
+
+            <span class="live-dot"></span>
+
+            <div>
+
+                <strong>
+                    GPT-5.1
+                </strong>
+
+                <small>
+                    Vision Enabled
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- DEVELOPER -->
+
+        <div class="developer-top">
+
+            <img src="developer.jpg"
+                 alt="Bipeen Sinha">
+
+            <div class="developer-top-info">
+
+                <span>
+                    DEVELOPED BY
+                </span>
+
+                <strong>
+                    Bipeen Sinha
+                </strong>
+
+                <small>
+                    AI • Cloud • DevOps Trainer
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     APPLICATION BODY
+====================================================== -->
+
+<div class="app-layout">
+
+
+    <!-- =================================================
+         LEFT SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-heading">
+
+            AI EXPERIENCE
+
+        </div>
+
+
+        <!-- VEHICLE -->
+
+        <button class="use-case active"
+                data-usecase="vehicle">
+
+            <div class="use-case-icon vehicle-icon">
+                🚗
+            </div>
+
+            <div class="use-case-text">
+
+                <strong>
+                    Vehicle Inspector
+                </strong>
+
+                <span>
+                    Detect visible damage
+                </span>
+
+            </div>
+
+        </button>
+
+
+        <!-- INTERIOR -->
+
+        <button class="use-case"
+                data-usecase="interior">
+
+            <div class="use-case-icon interior-icon">
+                🏠
+            </div>
+
+            <div class="use-case-text">
+
+                <strong>
+                    Interior Designer
+                </strong>
+
+                <span>
+                    Analyze room design
+                </span>
+
+            </div>
+
+        </button>
+
+
+        <!-- FASHION -->
+
+        <button class="use-case"
+                data-usecase="fashion">
+
+            <div class="use-case-icon fashion-icon">
+                👔
+            </div>
+
+            <div class="use-case-text">
+
+                <strong>
+                    Fashion Stylist
+                </strong>
+
+                <span>
+                    Analyze clothing
+                </span>
+
+            </div>
+
+        </button>
+
+
+        <!-- HOTEL -->
+
+        <button class="use-case"
+                data-usecase="hotel">
+
+            <div class="use-case-icon hotel-icon">
+                🏨
+            </div>
+
+            <div class="use-case-text">
+
+                <strong>
+                    Hotel Concierge
+                </strong>
+
+                <span>
+                    Menus & facilities
+                </span>
+
+            </div>
+
+        </button>
+
+
+        <!-- FOOD -->
+
+        <button class="use-case"
+                data-usecase="food">
+
+            <div class="use-case-icon food-icon">
+                🍽️
+            </div>
+
+            <div class="use-case-text">
+
+                <strong>
+                    Food Assistant
+                </strong>
+
+                <span>
+                    Food & menu analysis
+                </span>
+
+            </div>
+
+        </button>
+
+
+        <!-- DOCUMENT -->
+
+        <button class="use-case"
+                data-usecase="document">
+
+            <div class="use-case-icon document-icon">
+                📄
+            </div>
+
+            <div class="use-case-text">
+
+                <strong>
+                    Document Analyzer
+                </strong>
+
+                <span>
+                    Understand documents
+                </span>
+
+            </div>
+
+        </button>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <div class="foundry-mini">
+
+                <div class="foundry-icon">
+                    ✦
+                </div>
+
+                <div>
+
+                    <strong>
+                        Microsoft Foundry
+                    </strong>
+
+                    <span>
+                        AI Application
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-eyebrow">
+
+                    <span class="sparkle">
+                        ✦
+                    </span>
+
+                    MULTIMODAL AI EXPERIENCE
+
+                </div>
+
+
+                <h1>
+
+                    Give AI
+                    <span>eyes.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Upload an image, ask a question and let
+                    GPT-5.1 see, understand, reason and respond.
+
+                </p>
+
+
+                <div class="hero-pills">
+
+                    <span>
+                        👁️ Vision
+                    </span>
+
+                    <span>
+                        🧠 Reasoning
+                    </span>
+
+                    <span>
+                        💬 Conversation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO MODEL CARD -->
+
+            <div class="hero-model-card">
+
+                <div class="model-orb">
+                    ✦
+                </div>
+
+                <div>
+
+                    <span>
+                        MODEL
+                    </span>
+
+                    <strong>
+                        GPT-5.1
+                    </strong>
+
+                    <small>
+                        Multimodal Intelligence
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WORKSPACE
+        ================================================== -->
+
+        <section class="workspace">
+
+
+            <!-- =============================================
+                 IMAGE CARD
+            ============================================== -->
+
+            <div class="card">
+
+
+                <div class="card-header">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Upload Image
+                        </h2>
+
+                        <p>
+                            Give GPT-5.1 something to see
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="dropZone"
+                     class="drop-zone">
+
+
+                    <div id="uploadPlaceholder"
+                         class="upload-placeholder">
+
+                        <div class="upload-symbol">
+                            ↑
+                        </div>
+
+                        <h3>
+                            Drop your image here
+                        </h3>
+
+                        <p>
+                            or click anywhere to browse
+                        </p>
+
+                        <div class="supported-formats">
+
+                            JPG
+                            <span>•</span>
+                            PNG
+                            <span>•</span>
+                            WEBP
+
+                        </div>
+
+                    </div>
+
+
+                    <img id="imagePreview"
+                         class="image-preview"
+                         alt="Selected image">
+
+                </div>
+
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/png,image/jpeg,image/webp"
+                    hidden
+                >
+
+
+                <button id="browseButton"
+                        class="outline-button">
+
+                    <span>
+                        📁
+                    </span>
+
+                    Choose Image
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 PROMPT CARD
+            ============================================== -->
+
+            <div class="card">
+
+
+                <div class="card-header">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Ask GPT-5.1
+                        </h2>
+
+                        <p>
+                            What would you like to know?
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label>
+                    YOUR QUESTION
+                </label>
+
+
+                <div class="prompt-box">
+
+                    <textarea
+                        id="question"
+                        placeholder="Ask anything about the image..."
+                    ></textarea>
+
+                    <div class="prompt-icon">
+                        ✦
+                    </div>
+
+                </div>
+
+
+                <div class="quick-prompts">
+
+                    <button
+                        data-question="What do you see in this image?">
+
+                        👁️ What do you see?
+
+                    </button>
+
+
+                    <button
+                        data-question="What problems can you identify?">
+
+                        🔍 Identify problems
+
+                    </button>
+
+
+                    <button
+                        data-question="Give me recommendations based on this image.">
+
+                        ✨ Recommendations
+
+                    </button>
+
+                </div>
+
+
+                <button id="analyzeButton"
+                        class="analyze-button">
+
+                    <span>
+                        ✦
+                    </span>
+
+                    Analyze with GPT-5.1
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULT
+        ================================================== -->
+
+        <section class="result-card">
+
+
+            <div class="result-header">
+
+
+                <div class="result-title">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            AI Analysis
+                        </h2>
+
+                        <p>
+                            GPT-5.1 Vision response
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="analysisStatus"
+                     class="status-ready">
+
+                    <span></span>
+
+                    Ready
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LOADING -->
+
+            <div id="loading"
+                 class="loading hidden">
+
+                <div class="loading-orb">
+                    ✦
+                </div>
+
+                <div>
+
+                    <strong>
+                        GPT-5.1 is thinking...
+                    </strong>
+
+                    <span>
+                        Understanding visual context
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EMPTY -->
+
+            <div id="emptyResult"
+                 class="empty-result">
+
+                <div class="empty-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Your AI analysis will appear here
+                </h3>
+
+                <p>
+                    Upload an image and ask GPT-5.1 a question
+                    to begin your multimodal AI experience.
+                </p>
+
+            </div>
+
+
+
+            <!-- RESULT -->
+
+            <div id="result"
+                 class="result hidden">
+
+
+                <div class="result-meta">
+
+                    <span class="success-label">
+                        ✓ Analysis complete
+                    </span>
+
+                    <span id="selectedUseCase">
+                        Vehicle Inspection
+                    </span>
+
+                </div>
+
+
+                <div id="answer"
+                     class="answer">
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             AI PIPELINE
+        ================================================== -->
+
+        <section class="ai-pipeline">
+
+
+            <div class="pipeline-heading">
+
+                <span>
+                    HOW VISION AI WORKS
+                </span>
+
+                <strong>
+                    Image → Vision → Reasoning → Response
+                </strong>
+
+            </div>
+
+
+            <div class="pipeline">
+
+
+                <div class="pipeline-step">
+
+                    <div class="pipeline-icon">
+                        📷
+                    </div>
+
+                    <strong>
+                        Image
+                    </strong>
+
+                    <span>
+                        Upload
+                    </span>
+
+                </div>
+
+
+                <div class="pipeline-line"></div>
+
+
+                <div class="pipeline-step">
+
+                    <div class="pipeline-icon">
+                        👁️
+                    </div>
+
+                    <strong>
+                        Vision
+                    </strong>
+
+                    <span>
+                        GPT-5.1 sees
+                    </span>
+
+                </div>
+
+
+                <div class="pipeline-line"></div>
+
+
+                <div class="pipeline-step">
+
+                    <div class="pipeline-icon">
+                        🧠
+                    </div>
+
+                    <strong>
+                        Reasoning
+                    </strong>
+
+                    <span>
+                        Understand
+                    </span>
+
+                </div>
+
+
+                <div class="pipeline-line"></div>
+
+
+                <div class="pipeline-step">
+
+                    <div class="pipeline-icon">
+                        💬
+                    </div>
+
+                    <strong>
+                        Response
+                    </strong>
+
+                    <span>
+                        AI answer
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <span>
+                Vision AI Studio
+            </span>
+
+            <span>
+                Built with Microsoft Foundry & GPT-5.1
+            </span>
+
+            <span>
+                © 2026 Bipeen Sinha
+            </span>
+
+        </footer>
+
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

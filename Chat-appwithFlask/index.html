@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vodafone AI Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+<header class="top-header">
+
+    <div class="brand">
+        <div class="vodafone-logo">◉</div>
+        <div class="vodafone-text">vodafone</div>
+    </div>
+
+    <div class="header-title">
+        <div class="ai-title">
+            ✨ Vodafone AI Assistant
+        </div>
+
+        <div class="ai-subtitle">
+            Powered by Azure OpenAI Service
+        </div>
+    </div>
+
+    <div class="connection-status">
+        <span class="status-dot"></span>
+        Azure OpenAI Connected
+        <span class="monitor-icon">▣</span>
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN APPLICATION
+========================================================= -->
+<div class="application">
+
+    <!-- =====================================================
+         LEFT SIDEBAR
+    ====================================================== -->
+    <aside class="sidebar">
+
+        <button class="new-chat-btn" onclick="resetChat()">
+            <span>＋</span>
+            New Chat
+        </button>
+
+
+        <nav class="navigation">
+
+            <div class="nav-item active">
+                <span class="nav-icon">▣</span>
+                Chat History
+            </div>
+
+            <div class="nav-item">
+                <span class="nav-icon">☁</span>
+                Azure OpenAI
+            </div>
+
+            <div class="nav-item">
+                <span class="nav-icon">▤</span>
+                Prompts Library
+            </div>
+
+            <div class="nav-item">
+                <span class="nav-icon">🔖</span>
+                Saved Chats
+            </div>
+
+            <div class="nav-item">
+                <span class="nav-icon">♙</span>
+                Developer Profile
+            </div>
+
+            <div class="nav-item">
+                <span class="nav-icon">⚙</span>
+                Settings
+            </div>
+
+            <div class="nav-item">
+                <span class="nav-icon">?</span>
+                Help & Support
+            </div>
+
+        </nav>
+
+
+        <!-- SECURITY CARD -->
+        <div class="security-card">
+
+            <div class="security-icon">
+                ♢
+            </div>
+
+            <div class="security-title">
+                Enterprise Grade Security
+            </div>
+
+            <div class="security-text">
+                Your data is protected with
+                Vodafone security standards
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         CHAT AREA
+    ====================================================== -->
+    <main class="chat-section">
+
+        <div class="chat-window" id="chatWindow">
+
+            <!-- Initial AI message -->
+            <div class="message-row ai-row">
+
+                <div class="bot-avatar">
+                    🤖
+                </div>
+
+                <div class="message ai-message">
+
+                    <div class="message-title">
+                        Hello!
+                    </div>
+
+                    <div>
+                        I'm your Vodafone AI Assistant.
+                        <br>
+                        How can I help you today?
+                    </div>
+
+                    <div class="message-time">
+                        Just now
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             QUICK PROMPTS
+        ================================================== -->
+        <div class="quick-prompts">
+
+            <button onclick="usePrompt('Explain Azure OpenAI in simple terms')">
+                ☁ Ask about Azure
+            </button>
+
+            <button onclick="usePrompt('Explain this code')">
+                &lt;/&gt; Explain this code
+            </button>
+
+            <button onclick="usePrompt('Generate a SQL query')">
+                ▤ Generate SQL
+            </button>
+
+            <button onclick="usePrompt('Help me troubleshoot this problem')">
+                🔧 Troubleshoot
+            </button>
+
+            <button onclick="usePrompt('Summarize this text')">
+                📄 Summarize text
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             MESSAGE INPUT
+        ================================================== -->
+        <div class="input-container">
+
+            <textarea
+                id="messageInput"
+                placeholder="Type your message here..."
+                onkeydown="handleKeyDown(event)"
+            ></textarea>
+
+            <div class="input-tools">
+
+                <button title="Attach file">
+                    📎
+                </button>
+
+                <button title="Voice input">
+                    🎤
+                </button>
+
+            </div>
+
+            <button
+                class="send-btn"
+                id="sendButton"
+                onclick="sendMessage()">
+
+                ➤ Send
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         DEVELOPER PROFILE
+    ====================================================== -->
+    <aside class="profile-panel">
+
+        <div class="profile-image-container">
+
+            <img
+                src="{{ url_for('static', filename='Bipee.png') }}"
+                class="profile-image"
+                alt="Bipeen Sinha">
+
+        </div>
+
+
+        <div class="profile-content">
+
+            <h2>Bipeen Sinha</h2>
+
+            <div class="profile-skills">
+                AI &nbsp;|&nbsp;
+                Cloud &nbsp;|&nbsp;
+                DevOps &nbsp;|&nbsp;
+                Automation
+            </div>
+
+            <div class="red-line"></div>
+
+
+            <div class="profile-item">
+
+                <div class="profile-item-icon">
+                    🎓
+                </div>
+
+                <div>
+                    <strong>AI/ML Expert</strong>
+
+                    <p>
+                        VOIS Consulting
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <div class="profile-item-icon">
+                    ★
+                </div>
+
+                <div>
+                    <strong>29+ Years of Experience</strong>
+
+                    <p>
+                        IT Training, Cloud, DevOps,
+                        AI/ML & Automation
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="profile-item">
+
+                <div class="profile-item-icon">
+                    &lt;/&gt;
+                </div>
+
+                <div>
+                    <strong>AI Solution Builder</strong>
+
+                    <p>
+                        Building AI-powered solutions
+                        that drive real business impact.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- TECHNOLOGY CARD -->
+            <div class="technology-card">
+
+                <div class="built-with">
+                    Built with ❤️ using
+                </div>
+
+                <div class="technology">
+
+                    <span>🐍 Flask</span>
+
+                    <span>+</span>
+
+                    <span class="azure-text">
+                        ▲ Azure OpenAI
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="footer">
+
+    <div>
+        © 2026 Vodafone Group • AI Experience
+    </div>
+
+    <div>
+        Powered by
+        <strong>Microsoft Azure OpenAI</strong>
+        &nbsp; | &nbsp;
+        Flask
+        &nbsp; | &nbsp;
+        Vodafone AI Experience
+    </div>
+
+    <div>
+        🔒 Enterprise Secure
+    </div>
+
+</footer>
+
+
+<script>
+
+    /* =====================================================
+       ADD USER MESSAGE TO CHAT
+    ====================================================== */
+
+    function addUserMessage(text) {
+
+        const chatWindow =
+            document.getElementById("chatWindow");
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "message-row user-row";
+
+        row.innerHTML = `
+
+            <div class="message user-message">
+
+                ${escapeHtml(text)}
+
+                <div class="message-time">
+                    Just now ✓✓
+                </div>
+
+            </div>
+
+            <img
+                src="/static/Bipee.png"
+                class="small-profile"
+                alt="User">
+
+        `;
+
+        chatWindow.appendChild(row);
+
+        scrollChat();
+
+    }
+
+
+    /* =====================================================
+       ADD AI MESSAGE
+    ====================================================== */
+
+    function addAIMessage(text) {
+
+        const chatWindow =
+            document.getElementById("chatWindow");
+
+        const row =
+            document.createElement("div");
+
+        row.className =
+            "message-row ai-row";
+
+        row.innerHTML = `
+
+            <div class="bot-avatar">
+                🤖
+            </div>
+
+            <div class="message ai-message">
+
+                ${formatAIResponse(text)}
+
+                <div class="message-actions">
+
+                    <button onclick="copyMessage(this)">
+                        ⧉
+                    </button>
+
+                    <button>
+                        👍
+                    </button>
+
+                    <button>
+                        👎
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+        chatWindow.appendChild(row);
+
+        scrollChat();
+
+    }
+
+
+    /* =====================================================
+       TYPING INDICATOR
+    ====================================================== */
+
+    function showTyping() {
+
+        const chatWindow =
+            document.getElementById("chatWindow");
+
+        const typing =
+            document.createElement("div");
+
+        typing.id = "typingIndicator";
+
+        typing.className =
+            "message-row ai-row";
+
+        typing.innerHTML = `
+
+            <div class="bot-avatar">
+                🤖
+            </div>
+
+            <div class="message ai-message typing">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <label>
+                    AI is thinking...
+                </label>
+
+            </div>
+
+        `;
+
+        chatWindow.appendChild(typing);
+
+        scrollChat();
+
+    }
+
+
+    function removeTyping() {
+
+        const typing =
+            document.getElementById(
+                "typingIndicator"
+            );
+
+        if (typing) {
+            typing.remove();
+        }
+
+    }
+
+
+    /* =====================================================
+       SEND MESSAGE
+    ====================================================== */
+
+    async function sendMessage() {
+
+        const input =
+            document.getElementById(
+                "messageInput"
+            );
+
+        const button =
+            document.getElementById(
+                "sendButton"
+            );
+
+        const message =
+            input.value.trim();
+
+        if (!message) {
+            return;
+        }
+
+        addUserMessage(message);
+
+        input.value = "";
+
+        button.disabled = true;
+
+        showTyping();
+
+
+        try {
+
+            /*
+             * IMPORTANT:
+             *
+             * If your existing Flask backend uses
+             * another endpoint, change /chat below.
+             */
+
+            const response =
+                await fetch("/chat", {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        message: message
+                    })
+
+                });
+
+
+            const data =
+                await response.json();
+
+            removeTyping();
+
+
+            /*
+             * Supports common Flask response formats:
+             *
+             * {"response":"..."}
+             * {"answer":"..."}
+             * {"message":"..."}
+             */
+
+            const answer =
+                data.response ||
+                data.answer ||
+                data.message ||
+                "Sorry, I couldn't get a response.";
+
+
+            addAIMessage(answer);
+
+        }
+
+        catch (error) {
+
+            removeTyping();
+
+            addAIMessage(
+                "⚠️ Unable to connect to the Azure OpenAI service."
+            );
+
+            console.error(error);
+
+        }
+
+        finally {
+
+            button.disabled = false;
+
+            input.focus();
+
+        }
+
+    }
+
+
+    /* =====================================================
+       QUICK PROMPT
+    ====================================================== */
+
+    function usePrompt(text) {
+
+        const input =
+            document.getElementById(
+                "messageInput"
+            );
+
+        input.value = text;
+
+        input.focus();
+
+    }
+
+
+    /* =====================================================
+       RESET CHAT
+    ====================================================== */
+
+    function resetChat() {
+
+        const chatWindow =
+            document.getElementById(
+                "chatWindow"
+            );
+
+        chatWindow.innerHTML = `
+
+            <div class="message-row ai-row">
+
+                <div class="bot-avatar">
+                    🤖
+                </div>
+
+                <div class="message ai-message">
+
+                    <div class="message-title">
+                        Hello!
+                    </div>
+
+                    <div>
+                        I'm your Vodafone AI Assistant.
+                        <br>
+                        How can I help you today?
+                    </div>
+
+                    <div class="message-time">
+                        Just now
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* =====================================================
+       ENTER TO SEND
+    ====================================================== */
+
+    function handleKeyDown(event) {
+
+        if (
+            event.key === "Enter" &&
+            !event.shiftKey
+        ) {
+
+            event.preventDefault();
+
+            sendMessage();
+
+        }
+
+    }
+
+
+    /* =====================================================
+       SCROLL CHAT
+    ====================================================== */
+
+    function scrollChat() {
+
+        const chatWindow =
+            document.getElementById(
+                "chatWindow"
+            );
+
+        chatWindow.scrollTop =
+            chatWindow.scrollHeight;
+
+    }
+
+
+    /* =====================================================
+       BASIC HTML ESCAPE
+    ====================================================== */
+
+    function escapeHtml(text) {
+
+        const div =
+            document.createElement("div");
+
+        div.textContent = text;
+
+        return div.innerHTML;
+
+    }
+
+
+    /* =====================================================
+       BASIC AI RESPONSE FORMATTING
+    ====================================================== */
+
+    function formatAIResponse(text) {
+
+        let html =
+            escapeHtml(text);
+
+        html =
+            html.replace(
+                /\*\*(.*?)\*\*/g,
+                "<strong>$1</strong>"
+            );
+
+        html =
+            html.replace(
+                /\n/g,
+                "<br>"
+            );
+
+        return html;
+
+    }
+
+
+    /* =====================================================
+       COPY AI RESPONSE
+    ====================================================== */
+
+    function copyMessage(button) {
+
+        const message =
+            button
+            .closest(".ai-message");
+
+        const text =
+            message.innerText;
+
+        navigator.clipboard.writeText(text);
+
+        button.innerText = "✓";
+
+        setTimeout(() => {
+
+            button.innerText = "⧉";
+
+        }, 1500);
+
+    }
+
+</script>
+
+</body>
+</html>
+```

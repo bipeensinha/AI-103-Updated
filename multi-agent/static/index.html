@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Enterprise AI Service Desk</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+
+
+        <!-- BRAND -->
+
+        <div class="brand">
+
+            <div class="logo-container">
+
+                <img
+                    src="assets/enterprise-ai-logo.png"
+                    alt="Enterprise AI Service Desk"
+                    class="main-logo"
+                >
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <div class="enterprise-title">
+                    ENTERPRISE
+                </div>
+
+                <h1>
+                    <span>AI</span> SERVICE DESK
+                </h1>
+
+                <p>
+                    Multi-Agent AI System
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- DEVELOPER PROFILE -->
+
+        <div class="developer-profile">
+
+
+            <div class="developer-photo-wrapper">
+
+                <img
+                    src="assets/shruti-sinha.png"
+                    alt="Shruti Sinha"
+                    class="developer-photo"
+                >
+
+            </div>
+
+
+            <div class="developer-info">
+
+                <h2>
+                    Shruti Sinha
+                </h2>
+
+                <p class="developer-role">
+                    AI/ML Architect
+                </p>
+
+                <p class="developer-experience">
+                    EX AWS &nbsp;|&nbsp; EX IBM &nbsp;|&nbsp; EX IIM
+                </p>
+
+            </div>
+
+
+            <div class="linkedin-badge">
+                in
+            </div>
+
+        </div>
+
+
+        <!-- SYSTEM STATUS -->
+
+        <div class="system-status">
+
+            <span class="status-dot"></span>
+
+            System Online
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-container">
+
+
+        <!-- =================================================
+             LEFT SIDEBAR
+        ================================================== -->
+
+        <nav class="sidebar">
+
+
+            <div class="nav-item active">
+
+                <span class="nav-icon">⌂</span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </div>
+
+
+            <div class="nav-item">
+
+                <span class="nav-icon">💬</span>
+
+                <span>
+                    New Request
+                </span>
+
+            </div>
+
+
+            <div class="nav-item">
+
+                <span class="nav-icon">☷</span>
+
+                <span>
+                    Activity
+                </span>
+
+            </div>
+
+
+            <div class="nav-item">
+
+                <span class="nav-icon">▤</span>
+
+                <span>
+                    Knowledge Base
+                </span>
+
+            </div>
+
+
+            <div class="nav-item">
+
+                <span class="nav-icon">◫</span>
+
+                <span>
+                    Reports
+                </span>
+
+            </div>
+
+
+            <div class="nav-item">
+
+                <span class="nav-icon">⚙</span>
+
+                <span>
+                    Settings
+                </span>
+
+            </div>
+
+
+            <div class="nav-item">
+
+                <span class="nav-icon">ⓘ</span>
+
+                <span>
+                    About
+                </span>
+
+            </div>
+
+
+            <!-- AI POWERED CARD -->
+
+            <div class="ai-powered-card">
+
+                <div class="ai-small-icon">
+                    AI
+                </div>
+
+                <strong>
+                    AI Powered
+                </strong>
+
+                <p>
+                    Smarter Support
+                </p>
+
+                <p>
+                    Faster Resolution
+                </p>
+
+                <p>
+                    Better Experience
+                </p>
+
+            </div>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             CONTENT AREA
+        ================================================== -->
+
+        <section class="content-area">
+
+
+            <!-- =================================================
+                 REQUEST CARD
+            ================================================== -->
+
+            <section class="request-card">
+
+
+                <h2>
+                    Describe your IT issue
+                </h2>
+
+
+                <div class="input-row">
+
+
+                    <textarea
+                        id="problem"
+                        placeholder="Example: I cannot connect to the company VPN..."
+                    ></textarea>
+
+
+                    <button
+                        onclick="submitProblem()"
+                        class="submit-button"
+                    >
+
+                        <span>
+                            ➤
+                        </span>
+
+                        Submit
+
+                    </button>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 WORKFLOW + RIGHT PANEL
+            ================================================== -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- =================================================
+                     AGENT WORKFLOW
+                ================================================== -->
+
+                <section class="workflow-card">
+
+
+                    <h2 class="section-title">
+
+                        <span class="section-icon">
+                            ⛓
+                        </span>
+
+                        Agent Workflow
+
+                    </h2>
+
+
+                    <!-- ORCHESTRATOR -->
+
+                    <div
+                        class="agent orchestrator"
+                        id="orchestrator"
+                    >
+
+                        <div class="agent-image purple">
+
+                            🤖
+
+                        </div>
+
+
+                        <div class="agent-info">
+
+                            <h3>
+                                Orchestrator Agent
+                            </h3>
+
+                            <p id="orchestrator-text">
+                                Waiting for request...
+                            </p>
+
+                        </div>
+
+
+                        <span
+                            class="badge waiting"
+                            id="orchestrator-status"
+                        >
+                            WAITING
+                        </span>
+
+                    </div>
+
+
+                    <div class="workflow-arrow">
+                        ↓
+                    </div>
+
+
+                    <!-- SPECIALIST AGENTS -->
+
+                    <div class="specialists">
+
+
+                        <!-- IDENTITY -->
+
+                        <div
+                            class="agent specialist identity"
+                            id="identity-agent"
+                        >
+
+                            <div class="agent-image green">
+                                👤
+                            </div>
+
+                            <h3>
+                                Identity Agent
+                            </h3>
+
+                            <p>
+                                Account & Access
+                            </p>
+
+                            <span
+                                class="badge waiting"
+                                id="identity-status"
+                            >
+                                WAITING
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- NETWORK -->
+
+                        <div
+                            class="agent specialist network"
+                            id="network-agent"
+                        >
+
+                            <div class="agent-image blue">
+                                🌐
+                            </div>
+
+                            <h3>
+                                Network Agent
+                            </h3>
+
+                            <p>
+                                VPN & Connectivity
+                            </p>
+
+                            <span
+                                class="badge waiting"
+                                id="network-status"
+                            >
+                                WAITING
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- ENDPOINT -->
+
+                        <div
+                            class="agent specialist endpoint"
+                            id="endpoint-agent"
+                        >
+
+                            <div class="agent-image orange">
+                                💻
+                            </div>
+
+                            <h3>
+                                Endpoint Agent
+                            </h3>
+
+                            <p>
+                                Device & Configuration
+                            </p>
+
+                            <span
+                                class="badge waiting"
+                                id="endpoint-status"
+                            >
+                                WAITING
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="workflow-arrow">
+                        ↓
+                    </div>
+
+
+                    <!-- RESOLUTION -->
+
+                    <div
+                        class="agent resolution"
+                        id="resolution-agent"
+                    >
+
+                        <div class="agent-image pink">
+                            🎯
+                        </div>
+
+
+                        <div class="agent-info">
+
+                            <h3>
+                                Resolution Agent
+                            </h3>
+
+                            <p id="resolution-text">
+                                Waiting for agent findings...
+                            </p>
+
+                        </div>
+
+
+                        <span
+                            class="badge waiting"
+                            id="resolution-status"
+                        >
+                            WAITING
+                        </span>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =================================================
+                     RIGHT PANEL
+                ================================================== -->
+
+                <aside class="right-panel">
+
+
+                    <!-- ACTIVITY -->
+
+                    <section class="side-card">
+
+
+                        <div class="side-card-header">
+
+                            <h2>
+                                Activity Feed
+                            </h2>
+
+                            <span class="live-status">
+                                Live ●
+                            </span>
+
+                        </div>
+
+
+                        <div id="activity">
+
+                            <div class="activity-item">
+
+                                <span class="activity-icon purple-icon">
+                                    🤖
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        System
+                                    </strong>
+
+                                    <p>
+                                        System is ready to assist you.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <span class="activity-icon blue-icon">
+                                    👤
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        System
+                                    </strong>
+
+                                    <p>
+                                        Waiting for user request.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <span class="activity-icon blue-icon">
+                                    i
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Tip
+                                    </strong>
+
+                                    <p>
+                                        Provide as much detail as possible
+                                        for accurate resolution.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- MEMORY -->
+
+                    <section class="side-card">
+
+
+                        <h2>
+                            🧠 Short-Term Memory
+                        </h2>
+
+
+                        <div class="memory">
+
+
+                            <div class="memory-item">
+
+                                <span class="memory-icon blue-memory">
+                                    📄
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Employee Request
+                                    </strong>
+
+                                    <p id="memory-request">
+                                        Waiting...
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="memory-item">
+
+                                <span class="memory-icon purple-memory">
+                                    🔀
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Orchestrator Decision
+                                    </strong>
+
+                                    <p id="memory-decision">
+                                        Waiting...
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="memory-item">
+
+                                <span class="memory-icon green-memory">
+                                    🔍
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Agent Findings
+                                    </strong>
+
+                                    <p id="memory-findings">
+                                        Waiting...
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </section>
+
+
+
+                    <!-- FINAL RESPONSE -->
+
+                    <section class="side-card final-card">
+
+
+                        <h2>
+                            🎯 Final Resolution
+                        </h2>
+
+
+                        <div id="final-answer">
+
+                            Waiting for resolution...
+
+                        </div>
+
+
+                    </section>
+
+
+                </aside>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

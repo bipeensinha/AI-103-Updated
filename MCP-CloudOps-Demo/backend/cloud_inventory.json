@@ -1,0 +1,148 @@
+{
+  "inventory_name": "CloudOps Demo Estate",
+  "is_simulated": true,
+  "last_updated": "2026-10-09T10:00:00Z",
+  "resources": [
+    {
+      "id": "aks-prod-01",
+      "name": "aks-prod-01",
+      "type": "AKS Cluster",
+      "category": "Kubernetes",
+      "status": "Healthy",
+      "environment": "Production",
+      "region": "Central India",
+      "resource_group": "rg-cloudops-prod",
+      "details": {
+        "kubernetes_version": "1.32",
+        "node_pools": 2,
+        "nodes_ready": "5/5",
+        "services": 18,
+        "cpu_percent": 42,
+        "memory_percent": 61
+      }
+    },
+    {
+      "id": "aks-dev-01",
+      "name": "aks-dev-01",
+      "type": "AKS Cluster",
+      "category": "Kubernetes",
+      "status": "Warning",
+      "environment": "Development",
+      "region": "East US",
+      "resource_group": "rg-cloudops-dev",
+      "details": {
+        "kubernetes_version": "1.31",
+        "node_pools": 1,
+        "nodes_ready": "2/3",
+        "services": 7,
+        "cpu_percent": 78,
+        "memory_percent": 84,
+        "issue": "One node is NotReady"
+      }
+    },
+    {
+      "id": "sql-orders-prod",
+      "name": "sql-orders-prod",
+      "type": "Azure SQL Database",
+      "category": "Database",
+      "status": "Healthy",
+      "environment": "Production",
+      "region": "Central India",
+      "resource_group": "rg-data-prod",
+      "details": {
+        "engine": "Azure SQL",
+        "compute_tier": "General Purpose",
+        "storage_gb": 256,
+        "storage_used_percent": 63,
+        "connections": 124,
+        "backup": "Successful"
+      }
+    },
+    {
+      "id": "sql-analytics-dev",
+      "name": "sql-analytics-dev",
+      "type": "Azure SQL Database",
+      "category": "Database",
+      "status": "Warning",
+      "environment": "Development",
+      "region": "East US",
+      "resource_group": "rg-analytics-dev",
+      "details": {
+        "engine": "Azure SQL",
+        "compute_tier": "Serverless",
+        "storage_gb": 128,
+        "storage_used_percent": 91,
+        "connections": 17,
+        "backup": "Successful",
+        "issue": "Storage usage above 90%"
+      }
+    },
+    {
+      "id": "app-customer-portal",
+      "name": "app-customer-portal",
+      "type": "App Service",
+      "category": "Application",
+      "status": "Healthy",
+      "environment": "Production",
+      "region": "Central India",
+      "resource_group": "rg-app-prod",
+      "details": {
+        "runtime": "Python 3.12",
+        "plan": "P1v3",
+        "instances": 3,
+        "availability_percent": 99.98,
+        "response_time_ms": 182
+      }
+    },
+    {
+      "id": "app-inventory-api",
+      "name": "app-inventory-api",
+      "type": "App Service",
+      "category": "Application",
+      "status": "Critical",
+      "environment": "Production",
+      "region": "West Europe",
+      "resource_group": "rg-app-prod",
+      "details": {
+        "runtime": "Node.js 22",
+        "plan": "P1v3",
+        "instances": 2,
+        "availability_percent": 92.4,
+        "response_time_ms": 1840,
+        "issue": "Elevated response time and reduced availability"
+      }
+    },
+    {
+      "id": "vm-jumpbox-01",
+      "name": "vm-jumpbox-01",
+      "type": "Virtual Machine",
+      "category": "Compute",
+      "status": "Running",
+      "environment": "Operations",
+      "region": "Central India",
+      "resource_group": "rg-ops",
+      "details": {
+        "size": "Standard_D2s_v5",
+        "os": "Windows Server 2022",
+        "cpu_percent": 16,
+        "memory_percent": 37
+      }
+    },
+    {
+      "id": "st-telemetry-prod",
+      "name": "st-telemetry-prod",
+      "type": "Storage Account",
+      "category": "Storage",
+      "status": "Healthy",
+      "environment": "Production",
+      "region": "Central India",
+      "resource_group": "rg-data-prod",
+      "details": {
+        "redundancy": "ZRS",
+        "capacity_used_gb": 742,
+        "capacity_total_gb": 2048,
+        "public_access": "Disabled"
+      }
+    }
+  ]
+}
